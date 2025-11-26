@@ -150,7 +150,7 @@
     <!-- MENÚS -->
     <!--====================================-->
 
-    <menuitem id="menu_refugio_animales_root" name="Refugio de Animales"/>
+    <menuitem id="menu_refugio_animales_root" name="Refugio de Animales" web_icon="adopciones_refugio,static/description/icon.png"/>
 
     <menuitem id="menu_cuidadores"
               name="Cuidadores"
