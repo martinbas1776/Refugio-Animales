@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_refugio_animales_cuidador,refugio_animales.model_refugio_animales_cuidador,model_refugio_animales_cuidador,,1,1,1,1
+access_refugio_animales_animal,refugio_animales.model_refugio_animales_animal,model_refugio_animales_animal,,1,1,1,1
+access_refugio_animales_instalacion,refugio_animales.model_refugio_animales_instalacion,model_refugio_animales_instalacion,,1,1,1,1

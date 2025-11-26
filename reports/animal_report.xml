@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Acción del reporte -->
+    <record id="action_report_animal" model="ir.actions.report">
+        <field name="name">Informe de Animal</field>
+        <field name="model">refugio_animales.animal</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">refugio_animales.report_animal</field>
+
+        <!-- ID correcto del modelo -->
+        <field name="binding_model_id" ref="model_refugio_animales_animal"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <!-- Plantilla QWeb -->
+    <template id="report_animal">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="animal">
+                <t t-call="web.external_layout">
+                    <div class="page">
+
+                        <h2>Ficha del animal: <t t-esc="animal.nombre_animal"/></h2>
+
+                        <table class="table table-sm table-bordered" style="width:100%;">
+                            <thead>
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Especie</th>
+                                    <th>Edad (años)</th>
+                                    <th>Estado</th>
+                                    <th>Cuidador</th>
+                                    <th>Instalación</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><t t-esc="animal.nombre_animal"/></td>
+                                    <td><t t-esc="animal.especie"/></td>
+                                    <td><t t-esc="animal.edad"/></td>
+                                    <td><t t-esc="animal.estado"/></td>
+
+                                    <!-- Mostrar el nombre, no el recordset -->
+                                    <td>
+                                        <t t-esc="animal.cuidador_id.nombre_cuidador if animal.cuidador_id else '—'"/>
+                                    </td>
+                                    <td>
+                                        <t t-esc="animal.instalacion_id.nombre_instalacion if animal.instalacion_id else '—'"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <!-- tabla de adoptantes (solo en módulo B)
+                        <table class="table table-sm table-bordered" style="width:100%; margin-top:20px;">
+                            <thead>
+                                <tr>
+                                    <th>Adoptantes</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="animal.adoptante_ids" t-as="adoptante">
+                                    <td><t t-esc="adoptante.nombre"/></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        -->
+
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>
