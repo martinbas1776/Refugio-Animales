@@ -1,4 +1,9 @@
+
 ```
+Modulo desarrollado por Alicia Ramos. Lenguajes empleados: Python y xml.
+Se trata de un módulo que gestiona los cuidadores, los animales y las instalaciones de un refugio de animales, usando Odoo como plataforma.
+Sólo hay que buscar el módulo en la lista de módulos e instalarlo.
+
 Modelos
   - cuidador
   - animal
